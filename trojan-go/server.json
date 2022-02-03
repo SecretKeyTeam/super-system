@@ -1,0 +1,53 @@
+{
+    "run_type": "server",
+    "local_addr": "0.0.0.0",
+    "local_port": 443,
+    "remote_addr": "127.0.0.1",
+    "remote_port": 5212,
+    "log_level": 1,
+    "password": [
+        "AhNN1oAswwjEg9xW"
+    ],
+    "ssl": {
+        "cert": "/root/web/https/1.crt",
+        "key": "/root/web/https/2.key",
+        "fallback_port": 1234
+    },
+    "router":{
+        "enabled": true,
+        "block": [
+            "geoip:cn",
+            "geoip:private",
+            "geosite:cn",
+            "geosite:geolocation-cn",
+            "geosite:category-ads",
+            "domain:fast.com",
+            "domain:fast.net",
+            "domain:amap.com",
+            "regex:(api|ps|sv|offnavi|newvector|ulog.imap|newloc)(.map|).(baidu|n.shifen).com",
+            "regex:(.?)(xunlei|sandai|Thunder|XLLiveUD)(.)",
+            "regex:(.*.||)(dafahao|minghui|dongtaiwang|epochtimes|ntdtv|falundafa|wujieliulan).(org|com|net)",
+            "regex:(torrent|.torrent|peer_id=|info_hash|get_peers|find_node|BitTorrent|announce_peer|announce.php?passkey=)",
+            "regex:(.+.|^)(360|so|qihoo|360safe|qhimg|360totalsecurity|yunpan).(cn|com)",
+            "regex:(.*.||)(guanjia.qq.com|qqpcmgr|QQPCMGR)",
+            "regex:(.*.||)(rising|kingsoft|duba|xindubawukong|jinshanduba).(com|net|org)",
+            "regex:(.*.||)(netvigator|torproject).(com|cn|net|org)",
+            "((^.*@)(guerrillamail|guerrillamailblock|sharklasers|grr|pokemail|spam4|bccto|chacuo|027168).(info|biz|com|de|net|org|me|la)|Subject|HELO|SMTP)"
+        ],
+        "domain_strategy": "ip_if_non_match",
+	"geoip": "geoip.dat",
+        "geosite": "geosite.dat"
+    },
+    "api": {
+        "enabled": false,
+        "api_addr": "127.0.0.1",
+        "api_port": 10000,
+        "ssl": {
+          "enabled": false,
+          "key": "",
+          "cert": "",
+          "verify_client": false,
+          "client_cert": []
+    }
+  }
+}
