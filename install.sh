@@ -5,6 +5,10 @@ apt-get install -y unzip
 apt-get install -y nginx
 apt-get install -y supervisor
 
+
+ufw allow 80
+ufw allow 443
+
 # install oh-my-zsh
 # sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
