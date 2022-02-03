@@ -21,7 +21,7 @@ chmod +x trojan-go
 # download cloudreve
 mkdir -p ~/web/cloudreve
 cd ~/web/cloudreve
-https://github.com/cloudreve/Cloudreve/releases/download/3.4.1/cloudreve_3.4.1_linux_amd64.tar.gz
+wget https://github.com/cloudreve/Cloudreve/releases/download/3.4.1/cloudreve_3.4.1_linux_amd64.tar.gz
 tar -zxvf cloudreve_3.4.1_linux_amd64.tar.gz
 chmod +x cloudreve
 
@@ -37,6 +37,9 @@ cp $cwd_dir/trojan-go/server.json ~/web/trojan-go
 
 # copy cloudreve config
 cp $cwd_dir/cloudreve/* ~/web/cloudreve
+
+# copy supervisor config
+cp $cwd_dir/supervisor/*.conf /etc/supervisor/conf.d
 
 # start cloudreve
 supervisorctl reload
